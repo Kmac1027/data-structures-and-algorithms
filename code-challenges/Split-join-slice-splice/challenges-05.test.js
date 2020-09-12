@@ -129,17 +129,19 @@ const gruffaloCrumble = {
 
 
 const listFoods = (recipe) => {
-  let tempArr = [];
   let result = [];
-  for (var i = 0; i < gruffaloCrumble.ingredients.length; i++) {
-    tempArr.push(gruffaloCrumble.ingredients[i]);
-    for (var j = 0; j < tempArr.length; j++) {
-      var push = tempArr.slice[0];
-      // console.log(tempArr.indexOf(j));
-      tempArr = [];
+  recipe.ingredients.forEach(ingredient => {
+    //console.log(ingredient)
+    let ingArray = ingredient.split(' ');
+    let ingredientString = '';
+    for (let i = 2; i < ingArray.length; i++) {
+      ingredientString += ingArray[i];
+      if (i !== ingArray.length -1) {
+        ingredientString += ' ';
+      }
     }
-    result.push(push);
-  }
+    result.push(ingredientString);
+  });
   return result;
 };
 
