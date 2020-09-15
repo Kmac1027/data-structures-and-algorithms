@@ -123,22 +123,21 @@ hasChildrenValues(characters, 'Cersei') will return true
 hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 const hasChildrenValues = (arr, character) => {
-  let indexNumber;
-  arr.forEach((char, index) => {
+  let charArray;
+  arr.forEach((char) => {
     if (char.name === character) {
-      indexNumber = index;
+      charArray = Object.values(char);
     }
   });
-  if (indexNumber === undefined) {
+  if (charArray === undefined) {
     return false;
   }
-  if (arr[indexNumber].children.length > 1) {
+  if (charArray[2].length > 1) {
     return true;
   } else {
     return false;
   }
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
 
