@@ -66,11 +66,8 @@ const addBirthYearProperty = (obj, year) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
-
 Write a function that accepts an array of people objects and adds a new property called isAuthor to each object in the list. Set the value of the new property to true.
-
 The function should modify the object in place. Do not use a return statement.
-
 For example:
 const people = [{ fullName: 'Octavia Butler' }, { fullName: 'Ray Bradbury' }];
 setStatusAsAuthor(people);
@@ -85,12 +82,9 @@ const setStatusAsAuthor = (people) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
-
 Write a function that accepts two arrays. Append the values from the second array into the first,
 maintaining the ordering.
-
 The function should modify the first array in place. Do not use a return statement.
-
 For example:
 const a = [1, 2]; NOTE: If you assign an array to a `const`, you can't re-assign it later, but you can change the values in the array.
 const b = [3, 4];
@@ -107,13 +101,9 @@ const append = (arr1, arr2) => {
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
-
 All the code below will verify that your functions are working to solve the challenges.
-
 DO NOT CHANGE any of the below code.
-
 Run your tests from the console: jest challenges-02.test.js
-
 ------------------------------------------------------------------------------------------------ */
 
 describe('Testing challenge 1', () => {
