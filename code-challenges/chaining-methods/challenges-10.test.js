@@ -12,7 +12,7 @@ const createServer = () => {
   app.get('/hello', helloHandler);
   app.get('/aboutme', aboutMeHandler);
   app.get('/favoritefoods', favFoodHandler);
-  app.get('/foo', errorHandler)
+  app.get('/foo', errorHandler);
 
   var server = app.listen(3301, function () {
     var port = server.address().port;
