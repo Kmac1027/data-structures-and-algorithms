@@ -9,3 +9,4 @@ look through the array and cut it if it doesnt exist within that part of the arr
 
 ## Solution
 [](WB code challenge 3.jpg)
+got help from W3resource.com
