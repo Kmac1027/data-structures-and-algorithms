@@ -1,6 +1,6 @@
 //Mob programed with Michael, Spencer, and Sara
 
-class Node { 
+class Node {
   constructor(value) {
     this.value = value;
     this.next = null;
@@ -49,7 +49,45 @@ class LinkedList {
     valString += 'NULL';
     return valString;
   }
+  append(value) {
+    let current = this.head;
+    while (current) {
+      if (current !== null) {
+        current = current.next
+      } else {
+        current.next = new Node(value);
+        break;
+      }
+    }
+  }
+  insertBefore(value, newValue) {
+    let current = this.head;
+    while (current) {
+      if (current.next.value !== value) {
+        current = current.next;
+      } else {
+        let newNode = new Node(newValue);
+        newNode.next = newNode;
+        current.next = newNode;
+        break;
+      }
+    }
+  }
+  insertAfter(value, newValue) {
+    let current = this.head;
+    while (current) {
+      if (current.value !== value) {
+        current = current.ext;
+      } else {
+        let newNode = new Node(newValue);
+        newNode.next = current.next;
+        current.next = newNode;
+        break;
+      }
+    }
+  }
 }
+
 describe('Testing the functions for single linked lists', () => {
   test('test insert, it should insert a new node at the head of the list', () => {
     let purple = new LinkedList();
@@ -72,3 +110,5 @@ describe('Testing the functions for single linked lists', () => {
     expect(purple.toString()).toStrictEqual('{ c } -> { b } -> { a } -> NULL');
   });
 });
+
+module.export = { LinkedList, Node }
