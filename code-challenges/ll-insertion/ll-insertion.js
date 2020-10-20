@@ -111,4 +111,4 @@ describe('Testing the functions for single linked lists', () => {
   });
 });
 
-module.export = { LinkedList, Node }
+module.exports = { LinkedList: LinkedList, Node: Node }
