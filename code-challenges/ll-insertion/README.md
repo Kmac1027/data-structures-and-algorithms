@@ -8,4 +8,4 @@ add a node to the end of a linked list, add a node before a given node and after
 look for this.head and current.next and apply accordinglly
 
 ## Solution
-[](code challenge ll-insertion.jpg)
+[](code challenge ll-insertion.png)
