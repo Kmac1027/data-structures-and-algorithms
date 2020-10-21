@@ -1,11 +1,11 @@
 # Linked List Insertion
-add nodes into a linked list
+find the value of a node in the given number from the end
 
 ## Challenge
-add a node to the end of a linked list, add a node before a given node and after a given node
+create a function that will return the value of the node kth from the end of the linked list
 
 ## Approach & Efficiency
-look for this.head and current.next and apply accordinglly
+loop through the linked list with a counter, use that counter - the given number (and -1 to account for 0) and return the value of that node
 
 ## Solution
-[](code challenge ll-insertion.png)
+[](kth.jpg)

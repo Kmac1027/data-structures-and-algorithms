@@ -1,3 +1,5 @@
+'use strict';
+
 //Mob programed with Michael, Spencer, and Sara
 
 class Node {
@@ -86,7 +88,21 @@ class LinkedList {
       }
     }
   }
+  kthFromEnd(k) {
+    let current = this.head;
+    let index = 0;
+    while (current) {
+      index = index + 1;
+      current = current.next;
+    } if (k > index) {
+      return 'bloop'
+    }
+    let countdown = index - k - 1;
+    current = this.head;
+    for (let i = 0; i < countdown; i++) {
+     current = current.next;
+    } 
+      return current.value;
+  }
 }
-
-
 module.exports = { LinkedList: LinkedList, Node: Node }
