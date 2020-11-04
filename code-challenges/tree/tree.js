@@ -1,61 +1,100 @@
 'use strict';
 
-let array = [];
+
 
 class Node {
-  constructor(value) {
-    this.root = value,
-      this.left = null,
-      this.right = null
+  constructor(value, left = null, right = null) {
+    this.value = value;
+    this.left = left;
+    this.right = right;
   }
 }
 
-class Tree {
-  constructor() {
-    this.root = null
+class BinaryTree {
+  constructor(root = null) {
+    this.root = root;
   }
+
   preOrder(root) {
-    let currentNode = root;
-    if (currentNode) {
-      array.push(currentNode.value);
+    let orderedArray = [];
+    traverse(root);
+
+    function traverse(root) {
+      let currentNode = root;
+
+      if (currentNode) {
+        orderedArray.push(currentNode.value);
+      }
+
+      if (currentNode.left) {
+        traverse(currentNode.left);
+      }
+
+      if (currentNode.right) {
+        traverse(currentNode.right);
+      }
+
+      return orderedArray;
+
     }
-    if (currentNode.left) {
-      this.preOrder(currentNode.left);
-    }
-    if (currentNode.right) {
-      this.preOrder(currentNode.right);
-    }
-    return;
+    return orderedArray;
   }
+
   postOrder(root) {
-    let currentNode = root;
-    if (currentNode.left) {
-      this.postOrder(currentNode.left);
+    let orderedArray = [];
+    traverse(root);
+
+    function traverse(root) {
+      let currentNode = root;
+
+      if (currentNode.left) {
+        traverse(currentNode.left);
+      }
+
+      if (currentNode.right) {
+        traverse(currentNode.right);
+      }
+
+      if (currentNode) {
+        orderedArray.push(currentNode.value);
+      }
+
+      return orderedArray;
+
     }
-    if (currentNode.right) {
-      this.postOrder(currentNode.right);
-    }
-    if (currentNode) {
-      array.push(currentNode.value);
-    }
-    return;
+    return orderedArray;
   }
+
   inOrder(root) {
-    let currentNode = root;
-    if (currentNode.left) {
-      this.inOrder(currentNode.left);
+    let orderedArray = [];
+    traverse(root);
+
+    function traverse(root) {
+      let currentNode = root;
+
+      if (currentNode.left) {
+        traverse(currentNode.left);
+      }
+
+      if (currentNode) {
+        orderedArray.push(currentNode.value);
+      }
+
+      if (currentNode.right) {
+        traverse(currentNode.right);
+      }
+
+      return orderedArray;
+
     }
-    if (currentNode) {
-      array.push(currentNode.value);
-    }
-    if (currentNode.right) {
-      this.inOrder(currentNode.right);
-    }
-    return;
+    return orderedArray;
   }
 }
 
-class BinarySearchTree extends Tree {
+
+//still neeed work
+
+class BinarySearchTree extends BinaryTree {
   constructor(root) {
     super(root);
   }
@@ -128,5 +167,4 @@ class BinarySearchTree extends Tree {
   }
 }
 
-
-module.exports = { Node: Node, Tree: Tree, BinarySearchTree: BinarySearchTree }
+module.exports = {BinarySearchTree, BinaryTree, Node};
