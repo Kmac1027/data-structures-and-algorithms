@@ -13,5 +13,5 @@
 ### workflow
 
 1. No need to sort the array if the array only has one element or empty
-1. This is where we will be dividing the array into left and right
+1. We will be dividing the array into left and right
 1. Using recursion to combine the left and right
