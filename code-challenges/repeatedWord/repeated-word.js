@@ -52,8 +52,8 @@ class HashTable {
 }
 
 function repeat(str) {
-  let key = str.match(reg)
-  let add = new HashTable(key.length)
+  let key = str.match(reg);
+  let add = new HashTable(key.length);
   for (let i = 0; i < key.length; i++) {
     if (add.search(key[i]) === key[i]) {
       console.log(i, key[i]);
