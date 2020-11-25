@@ -1,6 +1,8 @@
 'use strict'
 
-function mergeSort (arr) {
+//code from medium.com - link in README
+
+function mergeSort(arr) {
   if (arr.length <= 1) {
     return arr;
   }
@@ -10,7 +12,7 @@ function mergeSort (arr) {
   return merge(mergeSort(left), mergeSort(right));
 }
 
-function merge (left, right) {
+function merge(left, right) {
   let resultArray = [];
   let leftIndex = 0;
   let rightIndex = 0;
@@ -20,7 +22,7 @@ function merge (left, right) {
       leftIndex++;
     } else {
       resultArray.push(right[rightIndex]);
-      rightIndex++; 
+      rightIndex++;
     }
   }
   return resultArray.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
